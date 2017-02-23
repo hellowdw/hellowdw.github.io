@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>小武的技术博客</title>
+  <title>static详解 › 小武的技术博客</title>
   <meta name="author" content="王德武">
   
   <meta name="description" content="技术博客">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="static详解"/>
   <meta property="og:site_name" content="小武的技术博客"/>
 
   
@@ -56,16 +56,14 @@
     <header>
       
   
-    <h1 class="title"></h1>
+    <h1 class="title">static详解</h1>
   
 
       
     </header>
     <div class="entry">
       
-        <hr>
-<p>title:  static详解<br>date: 2017-02-22 21:51:36<br>index—</p>
-<p>##static特点<br>1 随着类的加载而加载，静态会随着类的加载而加载，随着类的消失而消失。说明它的生命周期很长。<br>          2 优先于对象存在。–&gt;静态是先存在，对象是后存在。<br>         3 被所有实例(对象)所共享。<br>          4 可以直接被类名调用    </p>
+        <p>##static特点<br>1 随着类的加载而加载，静态会随着类的加载而加载，随着类的消失而消失。说明它的生命周期很长。<br>          2 优先于对象存在。–&gt;静态是先存在，对象是后存在。<br>         3 被所有实例(对象)所共享。<br>          4 可以直接被类名调用    </p>
 <p>##静态变量（类变量）和实例变量的区别:<br>        1存放位置<br>            1：类变量随着类的加载而加载存在于方法区中.<br>             2：实例变量随着对象的建立而存在于堆内存中.<br>        2生命周期<br>             1：类变量生命周期最长,随着类的消失而消失.<br>             2：实例变量生命周期随着对象的消失而消失.</p>
 <p>##静态优缺点<br>1： 优点:对对象的共享数据进行单独空间的存储,节省空间 例如Person 都有<br>国籍。该数据可以共享可以被类名调<br>2：缺点：生命周期过长<br>              访问出现局限性。（静态只能访问静态）</p>
 <p>##什么时候定义静态变量<br>        1:静态变量（类变量）当对象中出现共享数据<br>          例如：学生的学校名称。学校名称可以共享<br>                对象的数据要定义为非静态的存放在对内存中（学生的姓名，学生的年龄）</p>
@@ -111,14 +109,14 @@
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="search" name="q" results="0" placeholder="Search">
     <input type="hidden" name="q" value="site:www.hellowdw.com">
   </form>
 </div>
 
   
 <div class="widget tag">
-  <h3 class="title">Neueste Artikel</h3>
+  <h3 class="title">Recent Posts</h3>
   <ul class="entry">
     
       <li>
@@ -143,7 +141,7 @@
 
   
 <div class="widget tag">
-  <h3 class="title">Kategorien</h3>
+  <h3 class="title">Categories</h3>
   <ul class="entry">
   
     <li><a href="/categories/iOS/">iOS</a><small>2</small></li>
@@ -156,7 +154,7 @@
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Tag-Cloud</h3>
+  <h3 class="title">Tag Cloud</h3>
   <div class="entry">
     <a href="/tags/button/" style="font-size: 10px;">button</a> <a href="/tags/ipa/" style="font-size: 10px;">ipa</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a>
   </div>
