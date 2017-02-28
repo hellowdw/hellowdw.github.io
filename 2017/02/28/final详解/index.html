@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ipa › 小武的技术博客</title>
+  <title>final详解 › 小武的技术博客</title>
   <meta name="author" content="王德武">
   
   <meta name="description" content="技术博客">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="final详解"/>
   <meta property="og:site_name" content="小武的技术博客"/>
 
   
@@ -47,23 +47,96 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title tag">ipa</h2>
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="[layout]">
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">final详解</h1>
+  
 
+      
+        <time datetime="2017-02-27T16:00:00.000Z">2017-02-28</time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>1：final关键字主要用于修饰类、类成员、方法、以及方法的形参。<br>2：final修饰成员属性.<br>3：如何正确使用final.</p>
+<a id="more"></a>
+<pre><code>1：说明该成员属性是常量，不能被修改。
+    public static final double PI=3.14;
+    1：public ：访问权限最大
+    2：static ：内存中只有一份
+    3：final  ：是一个常量
+    4：常量名大写
+    5：必须初赋值。
 
-  <div class="archive">
-    
-      <article class="[layout]">
-        <div class="post-content">
-          <header>
-            
-              <h2 class="archive-post"><span datetime="2017-01-17T06:46:42.000Z">2017-01-17</span><a href="/2017/01/17/ipa文件“减肥”初探/">ipa文件“减肥”初探</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
+2：使用类名.成员。修改该成员的值，报错。--常量不能被修改
+    1：基本数据类型，final使值不变
+    2：对象引用，final使其引用恒定不变，无法让其指向一个新的对象，但是对象自身却可以被修改。
+    3：该关键字一般和static关键字结合使用
+        1：常量可以优先加载，不必等到创建对象的时候再初始化。
+    4：final和static可以互换位置
+    5：常量一般被修饰为final
+3：fianl修饰类：
+    1：该类是最终类，不能被继承。
+        1：将父类加final修饰，子类继承，就会报错。
+        2：查看api文档发现String类是final的。Integer类也是final的
+        3：为了防止代码功能被重写
+        4：该类没有必要进行扩展
+4：final修饰方法：
+    1：该方法是最终方法，不能被重写
+    2：当一个类被继承，那么所有的非私有函数都将被继承，如果函数不想被子类继承并重写可以将该函数final修饰    
+    3：当一个类中的函数都被修饰为final时，可以将类定义为final的。
+ 5：final关键字修饰形参
+    1：当形参被修饰为final,那么该形参所属的方法中不能被篡改。
+    2： 项目中主要用于一些只用来遍历未知数据的函数。将未知变量声明为final的。增强数据的安全性。
+</code></pre>
+      
+    </div>
+      
+      <footer>
+        
+  
+  <div class="categories">
+    <a href="/categories/java/">java</a>
   </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/final/">final</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+      </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  
+</section>
+
 
 </div></div>
     <aside id="sidebar" class="alignright">
