@@ -72,10 +72,12 @@
 <li>降低了一个进程里面的线程的执行频率。</li>
 <li>对线程进行管理要求额外的 CPU开销。线程的使用会给系统带来上下文切换的额外负担。</li>
 <li>公有变量的同时读或写。当多个线程需要对公有变量进行写操作时,后一个线程往往会修改掉前一个线程存放的数据，发生线程安全问题。</li>
-<li>线程的死锁。即较长时间的等待或资源竞争以及死锁等多线程症状。<br>2    创建线程的方式<br>2.1    创建线程的方式一</li>
-<li>继承Thread类</li>
-</ol>
+<li><p>线程的死锁。即较长时间的等待或资源竞争以及死锁等多线程症状。<br>创建线程的方式<br>2.1    创建线程的方式一</p>
+<ol>
+<li><p>继承Thread类</p>
 <p>getName()是获取线程的名字。<br>执行后的效果：</p>
+</li>
+</ol>
 <p>问题： 先按照顺序运行完了张三，然后接着再按照顺序运行完李四，我们想要的效果是张三和李四做资源的争夺战，也就是先是张三然后李四，没有顺序的执行。这就证明多线程没有起到效果。</p>
 <ol>
 <li>需要复写run方法，把要执行的任务放在run方法中。</li>
@@ -93,6 +95,8 @@
 <li>线程的启动只能由一次，否则抛出异常</li>
 <li>可以直接创建Thread类的对象并启动该线程，但是如果没有重写run()，什么也不执行。</li>
 <li>匿名内部类的线程实现方式<br>2.2    线程的状态</li>
+</ol>
+</li>
 </ol>
 <p>创建：新创建了一个线程对象。<br>可运行：线程对象创建后，其他线程调用了该对象的start()方法。该状态的线程位于可运行线程池中，变得可运行，等待获取cpu的执行权。<br>运行：就绪状态的线程获取了CPU执行权，执行程序代码。<br>阻临时塞: 阻塞状态是线程因为某种原因放弃CPU使用权，暂时停止运行。直到线程进入就绪状态，才有机会转到运行状态。<br>死亡：线程执行完它的任务时。<br>2.3    常见线程的方法<br>Thread(String name)     初始化线程的名字<br> getName()             返回线程的名字<br> setName(String name)    设置线程对象名<br> sleep()                 线程睡眠指定的毫秒数。<br> getPriority()             返回当前线程对象的优先级   默认线程的优先级是5<br> setPriority(int newPriority) 设置线程的优先级    虽然设置了线程的优先级，但是具体的实现取决于底层的操作系统的实现（最大的优先级是10 ，最小的1 ， 默认是5）。<br> currentThread()      返回CPU正在执行的线程的对象<br>class ThreadDemo1 extends Thread<br>{<br>    public ThreadDemo1(){</p>
 <pre><code>}
@@ -114,7 +118,7 @@ public void run(){
 </code></pre><p>}<br>class Demo3<br>{<br>    public static void main(String[] args)<br>    {<br>        ThreadDemo1 th1 = new ThreadDemo1(“线程1”);<br>        ThreadDemo1 th2 = new ThreadDemo1(“线程2”);<br>        // 设置线程名<br>        th1.setName( “th1” );<br>        th2.setName( “th2” );<br>        // 设置线程优先级  1 ~ 10<br>        th1.setPriority( 10 );<br>        th2.setPriority( 7 );<br>        // 查看SUN定义的线程优先级范围<br>        System.out.println(“max : “ + Thread.MAX_PRIORITY );<br>        System.out.println(“min : “ + Thread.MIN_PRIORITY );<br>        System.out.println(“nor : “ + Thread.NORM_PRIORITY );<br>        th1.start();<br>        th2.start();<br>        System.out.println(“Hello World!”);<br>    }<br>}</p>
 <p>练习：模拟卖票</p>
 <p>存在问题：这时候启动了四个线程，那么tickets是一个成员变量，也就是在一个线程对象中都维护了属于自己的tickets属性，那么就总共存在了四份。<br>解决方案一：tickets使用staitc修饰，使每个线程对象都是共享一份属性。</p>
-<p>解决方案2：编写一个类实现Runnable接口。<br>2.4    创建线程的方式二<br>创建线程的第二种方式.使用Runnable接口.<br>该类中的代码就是对线程要执行的任务的定义.<br>1：定义了实现Runnable接口<br>2：重写Runnable接口中的run方法，就是将线程运行的代码放入在run方法中<br>3：通过Thread类建立线程对象<br>4：将Runnable接口的子类对象作为实际参数，传递给Thread类构造方法<br>5：调用Thread类的start方法开启线程，并调用Runable接口子类run方法<br>为什么要将Runnable接口的子类对象传递给Thread的构造函数，因为自定义的run方法所属对象是Runnable接口的子类对象，所以要让线程去执行指定对象的run方法<br>package cn.itcast.gz.runnable;<br>public class Demo1 {<br>    public static void main(String[] args) {<br>        MyRun my = new MyRun();<br>        Thread t1 = new Thread(my);<br>        t1.start();<br>        for (int i = 0; i &lt; 200; i++) {<br>            System.out.println(“main:” + i);<br>        }<br>    }<br>}<br>class MyRun implements Runnable {<br>    public void run() {<br>        for (int i = 0; i &lt; 200; i++) {<br>            System.err.println(“MyRun:” + i);<br>        }<br>    }<br>}</p>
+<p>解决方案2：编写一个类实现Runnable接口。<br>2.4    创建线程的方式二<br>创建线程的第二种方式.使用Runnable接口.<br>该类中的代码就是对线程要执行的任务的定义.<br>1：定义了实现Runnable接口<br>2：重写Runnable接口中的run方法，就是将线程运行的代码放入在run方法中<br>3：通过Thread类建立线程对象<br>4：将Runnable接口的子类对象作为实际参数，传递给Thread类构造方法<br>5：调用Thread类的start方法开启线程，并调用Runable接口子类run方法<br>为什么要将Runnable接口的子类对象传递给Thread的构造函数，因为自定义的run方法所属对象是Runnable接口的子类对象，所以要让线程去执行指定对象的run方法<br>             package cn.itcast.gz.runnable;<br>                 public class Demo1 {<br>                 public static void main(String[] args) {<br>                        MyRun my = new MyRun();<br>                        Thread t1 = new Thread(my);<br>                        t1.start();<br>                        for (int i = 0; i &lt; 200; i++) {<br>                        System.out.println(“main:” + i);<br>                          }<br>                    }<br>                 }<br>             class MyRun implements Runnable {<br>                  public void run() {<br>                   for (int i = 0; i &lt; 200; i++) {<br>                      System.err.println(“MyRun:” + i);<br>                    }<br>                  }<br>              }</p>
 <p>理解Runnable:<br>Thread类可以理解为一个工人,而Runnable的实现类的对象就是这个工人的工作(通过构造方法传递).Runnable接口中只有一个方法run方法,该方法中定义的事会被新线程执行的代码.当我们把Runnable的子类对象传递给Thread的构造时,实际上就是让给Thread取得run方法,就是给了Thread一项任务.</p>
 <p>买票例子使用Runnable接口实现<br>在上面的代码中故意照成线程执行完后，执行Thread.sleep（100），以让cpu让给别的线程，该方法会出现非运行时异常需要处理，这里必须进行try{}catch（）{}，因为子类不能比父类抛出更多的异常，接口定义中没有异常，实现类也不能抛出异常。<br>运行发现票号出现了负数，显示了同一张票被卖了4次的情况。<br>出现了同样的问题。如何解决？<br>class MyTicket implements Runnable {<br>    int tickets = 100;<br>    public void run() {<br>        while (true) {<br>            if (tickets &gt; 0) {<br>                try {<br>                    Thread.sleep(100);<br>                } catch (InterruptedException e) {<br>                    e.printStackTrace();<br>                }<br>                System.out.println(Thread.currentThread().getName() + “窗口@销售：”</p>
 <pre><code>                    + tickets + &quot;号票&quot;);
