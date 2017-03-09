@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>接口的特点和抽象类 › 小武的技术博客</title>
+  <title>xcode编译错误 › 小武的技术博客</title>
   <meta name="author" content="王德武">
   
   <meta name="description" content="技术博客">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="接口的特点和抽象类"/>
+  <meta property="og:title" content="xcode编译错误"/>
   <meta property="og:site_name" content="小武的技术博客"/>
 
   
@@ -52,29 +52,30 @@
     <header>
       
   
-    <h1 class="title">接口的特点和抽象类</h1>
+    <h1 class="title">xcode编译错误</h1>
   
 
       
-        <time datetime="2017-02-27T16:00:00.000Z">2017-02-28</time>
+        <time datetime="2017-03-08T16:00:00.000Z">2017-03-09</time>
       
     </header>
     <div class="entry">
       
-        <p>1，java中接口的特点<br>2，抽象类</p>
-<a id="more"></a>
-<h2 id="java中接口的特点"><a href="#java中接口的特点" class="headerlink" title="java中接口的特点"></a>java中接口的特点</h2><ol>
-<li>类实现接口可以通过implements实现，实现接口的时候必须把接口中的所有方法实现,一个类可以实现多个接口。</li>
-<li>接口中定义的所有的属性默认是public static final的，即静态常量既然是常量，那么定义的时候必须赋值。</li>
-<li>接口中定义的方法不能有方法体。接口中定义的方法默认添加public abstract</li>
-<li>有抽象函数的不一定是抽象类，也可以是接口类。</li>
-<li>由于接口中的方法默认都是抽象的，所以不能被实例化。</li>
-<li>对于接口而言，可以使用子类来实现接口中未被实现的功能函数。</li>
-<li>如果实现类中要访问接口中的成员，不能使用super关键字。因为两者之间没有显示的继承关系，况且接口中的成员成员属性是静态的。可以使用接口名直接访问。</li>
-<li>接口没有构造方法。</li>
-</ol>
-<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>1：当描述一个类的时候，如果不能确定功能函数如何定义，那么该类就可以定义为抽象类，功能函数应该描述为抽象函数。<br>2：抽象类的特点<br>            1：有抽象函数的类，该类一定是抽象类。<br>            2：抽象类中不一定要有抽象函数。<br>            3：抽象类不能使用new创建对象<br>                1：创建对象，使用对象的功能，抽象类的方法，没有方法体。<br>            4：抽象类主要为了提高代码的复用性，让子类继承来使用。<br>            5：编译器强制子类实现抽象类父类的未实现的方法。<br>                1：可以不实现，前提是子类的也要声明为抽象的。<br>3：抽象的优点<br>            1：提高代码复用性<br>            2：强制子类实现父类中没有实现的功能<br>            java中接口的特点</p>
+        <p>一般使用xcode开发iOS时遇到 architecture x86_64 类似问题可能产生的原因</p>
+<pre><code>1.新建类，未参加 Target 编译（与我的问题一模一样） 
 
+2.检查 targets --&gt; build phases --&gt; Compile Sources 中是否缺少 .m 文件
+
+3.检查 targets --&gt; build phases --&gt; link binary with libraries 是否缺少依赖库
+
+4.有些三方库可能需要导入libz.dylib
+
+5.检查库文件导入的路径不对或不存在，targets --&gt; building setting --&gt; search paths路径
+
+6.检查三方库是否重复导入
+
+6.-fno-objc-arc 的问题，检查下文件编译环境
+</code></pre>
       
     </div>
       
@@ -82,13 +83,13 @@
         
   
   <div class="categories">
-    <a href="/categories/java/">java</a>
+    <a href="/categories/iOS/">iOS</a>
   </div>
 
         
   
   <div class="tags">
-    <a href="/tags/implements/">implements</a>
+    <a href="/tags/error/">error</a>
   </div>
 
         
