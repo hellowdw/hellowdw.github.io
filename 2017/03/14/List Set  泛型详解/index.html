@@ -61,7 +61,9 @@
     </header>
     <div class="entry">
       
-        <p>单例集合 的体系：<br>———| Collection 单例集合的根接口<br>————| List  如果是实现了List接口的集合类， 具备的特点：有序，重复。<br>—————| ArraryList  底层 是使用了Object数组实现的，特点： 查询速度快，增删慢。<br>—————| LinkedList 底层是使用了链表数据结构实现 的， 特点： 查询速度慢，增删快。<br>—————| Vector Vector的实现与ArrayList是一致，但是是线程安全 的，操作效率低。 jdk1.0的时候出现的<br>————| Set  如果是实现了Set接口的集合类，具备的特点：无序，不可重复。<br>—————-| HashSet  底层是使用了一个哈希表支持的， 特点：存取速度快。<br>HashSet添加元素的原理：<br>    往HashSet添加元素的时候，首先HashSet会调用元素的hashCOde方法得到元素的哈希码值，然后会经过一系列运算<br>    就可以算出该元素在哈希表中的存储位置/</p>
+        <p>1, ArraryList和LinkedList区别<br>2, HashSet和TreeSet区别<br>3, 泛型详解</p>
+<a id="more"></a>
+<p>单例集合 的体系：<br>———| Collection 单例集合的根接口<br>————| List  如果是实现了List接口的集合类， 具备的特点：有序，重复。<br>—————| ArraryList  底层 是使用了Object数组实现的，特点： 查询速度快，增删慢。<br>—————| LinkedList 底层是使用了链表数据结构实现 的， 特点： 查询速度慢，增删快。<br>—————| Vector Vector的实现与ArrayList是一致，但是是线程安全 的，操作效率低。 jdk1.0的时候出现的<br>————| Set  如果是实现了Set接口的集合类，具备的特点：无序，不可重复。<br>—————-| HashSet  底层是使用了一个哈希表支持的， 特点：存取速度快。<br>HashSet添加元素的原理：<br>    往HashSet添加元素的时候，首先HashSet会调用元素的hashCOde方法得到元素的哈希码值，然后会经过一系列运算<br>    就可以算出该元素在哈希表中的存储位置/</p>
 <pre><code>情况1：如果算出该元素的位置目前没有任何元素存储，那么该元素可以直接存储　
 
 情况2： 如果算出该元素的位置目前已经存有其他的元素，那么还会调用元素的equals方法与该位置的元素再比较一次。
