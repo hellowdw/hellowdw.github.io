@@ -53,6 +53,58 @@
     <header>
       
   
+    <h1 class="title"><a href="/2017/03/23/iOS KVO机制/">iOS kvo机制</a></h1>
+  
+
+      
+        <time datetime="2017-03-22T16:00:00.000Z">2017-03-23</time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>1.注册观察者：<br>         //第一个参数observer：观察者 （这里观察self.myKVO对象的属性变化）</p>
+<pre><code>//第二个参数keyPath： 被观察的属性名称(这里观察self.myKVO中num属性值的改变)
+
+ //第三个参数options： 观察属性的新值、旧值等的一些配置（枚举值，可以根据需要设置，例如这里可以使用两项）
+
+ //第四个参数context： 上下文，可以为kvo的回调方法传值（例如设定为一个放置数据的字典）
+
+  //注册观察者
+
+ [self.myKVO addObserver:self forKeyPath:@&quot;num&quot; options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil]; 
+</code></pre><p>2，属性(keyPath)的值发送变化时，收到通知，调用以下方法，这个方法是固定的:</p>
+<pre><code>//keyPath:属性名称
+
+//object:被观察的对象
+
+//change:变化前后的值都存储在change字典中
+
+//context:注册观察者时，context传过来的值
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary&lt;NSString *,id&gt; *)change context:(void *)context{
+ }
+</code></pre><p>3.移除KVO<br>    [self removeObserver:self forKeyPath:@”num” context:nil];</p>
+
+      
+    </div>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+      </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="[layout]">
+  <div class="post-content">
+    <header>
+      
+  
     <h1 class="title"><a href="/2017/03/14/List Set  泛型详解/">List Set 泛型详解</a></h1>
   
 
@@ -384,6 +436,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2017/03/23/iOS KVO机制/">iOS kvo机制</a>
+      </li>
+    
+      <li>
         <a href="/2017/03/14/List Set  泛型详解/">List Set 泛型详解</a>
       </li>
     
@@ -399,10 +455,6 @@
         <a href="/2017/02/28/final详解/">final详解</a>
       </li>
     
-      <li>
-        <a href="/2017/02/28/java中接口和抽象类/">接口的特点和抽象类</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -412,7 +464,7 @@
   <h3 class="title">分类</h3>
   <ul class="entry">
   
-    <li><a href="/categories/iOS/">iOS</a><small>3</small></li>
+    <li><a href="/categories/iOS/">iOS</a><small>4</small></li>
   
     <li><a href="/categories/java/">java</a><small>5</small></li>
   
@@ -426,7 +478,7 @@
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/List-Set-泛型/" style="font-size: 10px;">List Set  泛型</a> <a href="/tags/button/" style="font-size: 10px;">button</a> <a href="/tags/error/" style="font-size: 10px;">error</a> <a href="/tags/final/" style="font-size: 10px;">final</a> <a href="/tags/implements/" style="font-size: 10px;">implements</a> <a href="/tags/ipa/" style="font-size: 10px;">ipa</a> <a href="/tags/static/" style="font-size: 10px;">static</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a>
+    <a href="/tags/List-Set-泛型/" style="font-size: 10px;">List Set  泛型</a> <a href="/tags/button/" style="font-size: 10px;">button</a> <a href="/tags/error/" style="font-size: 10px;">error</a> <a href="/tags/final/" style="font-size: 10px;">final</a> <a href="/tags/implements/" style="font-size: 10px;">implements</a> <a href="/tags/ipa/" style="font-size: 10px;">ipa</a> <a href="/tags/kvo/" style="font-size: 10px;">kvo</a> <a href="/tags/static/" style="font-size: 10px;">static</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a>
   </div>
 </div>
 

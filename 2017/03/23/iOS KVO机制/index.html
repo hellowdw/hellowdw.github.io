@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>implements › 小武的技术栈</title>
+  <title>iOS kvo机制 › 小武的技术栈</title>
   <meta name="author" content="王德武">
   
   <meta name="description" content="技术栈">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="iOS kvo机制"/>
   <meta property="og:site_name" content="小武的技术栈"/>
 
   
@@ -47,23 +47,88 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title tag">implements</h2>
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="[layout]">
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">iOS kvo机制</h1>
+  
 
+      
+        <time datetime="2017-03-22T16:00:00.000Z">2017-03-23</time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>1.注册观察者：<br>         //第一个参数observer：观察者 （这里观察self.myKVO对象的属性变化）</p>
+<pre><code>//第二个参数keyPath： 被观察的属性名称(这里观察self.myKVO中num属性值的改变)
 
-  <div class="archive">
-    
-      <article class="[layout]">
-        <div class="post-content">
-          <header>
-            
-              <h2 class="archive-post"><span datetime="2017-02-27T16:00:00.000Z">2017-02-28</span><a href="/2017/02/28/java中接口和抽象类/">接口的特点和抽象类</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
+ //第三个参数options： 观察属性的新值、旧值等的一些配置（枚举值，可以根据需要设置，例如这里可以使用两项）
+
+ //第四个参数context： 上下文，可以为kvo的回调方法传值（例如设定为一个放置数据的字典）
+
+  //注册观察者
+
+ [self.myKVO addObserver:self forKeyPath:@&quot;num&quot; options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil]; 
+</code></pre><p>2，属性(keyPath)的值发送变化时，收到通知，调用以下方法，这个方法是固定的:</p>
+<pre><code>//keyPath:属性名称
+
+//object:被观察的对象
+
+//change:变化前后的值都存储在change字典中
+
+//context:注册观察者时，context传过来的值
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary&lt;NSString *,id&gt; *)change context:(void *)context{
+ }
+</code></pre><p>3.移除KVO<br>    [self removeObserver:self forKeyPath:@”num” context:nil];</p>
+
+      
+    </div>
+      
+      <footer>
+        
+  
+  <div class="categories">
+    <a href="/categories/iOS/">iOS</a>
   </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/kvo/">kvo</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+      </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  
+</section>
+
 
 </div></div>
     <aside id="sidebar" class="alignright">
