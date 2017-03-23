@@ -61,28 +61,28 @@
     </header>
     <div class="entry">
       
-        <p>1.注册观察者：<br>         //第一个参数observer：观察者 （这里观察self.myKVO对象的属性变化）</p>
-<pre><code>//第二个参数keyPath： 被观察的属性名称(这里观察self.myKVO中num属性值的改变)
+        <p>1.注册观察者：<br>         第一个参数observer：观察者 （这里观察self.myKVO对象的属性变化）</p>
+<pre><code>第二个参数keyPath： 被观察的属性名称(这里观察self.myKVO中num属性值的改变)
 
- //第三个参数options： 观察属性的新值、旧值等的一些配置（枚举值，可以根据需要设置，例如这里可以使用两项）
+第三个参数options： 观察属性的新值、旧值等的一些配置（枚举值，可以根据需要设置，例如这里可以使用两项）
 
- //第四个参数context： 上下文，可以为kvo的回调方法传值（例如设定为一个放置数据的字典）
+第四个参数context： 上下文，可以为kvo的回调方法传值（例如设定为一个放置数据的字典）
 
-  //注册观察者
+注册观察者
 
  [self.myKVO addObserver:self forKeyPath:@&quot;num&quot; options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:nil]; 
 </code></pre><p>2，属性(keyPath)的值发送变化时，收到通知，调用以下方法，这个方法是固定的:</p>
-<pre><code>//keyPath:属性名称
+<pre><code>keyPath:属性名称
 
-//object:被观察的对象
+object:被观察的对象
 
-//change:变化前后的值都存储在change字典中
+change:变化前后的值都存储在change字典中
 
-//context:注册观察者时，context传过来的值
+context:注册观察者时，context传过来的值
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary&lt;NSString *,id&gt; *)change context:(void *)context{
  }
-</code></pre><p>3.移除KVO<br>    [self removeObserver:self forKeyPath:@”num” context:nil];</p>
+</code></pre><p>3.移除KVO<br>          [self removeObserver:self forKeyPath:@”num” context:nil];</p>
 
       
     </div>
