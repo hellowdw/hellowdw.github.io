@@ -64,8 +64,8 @@
       
         <p><img src="/2017/03/27/reactNative本地和网络加载图片/react_eg.png" alt="示例图片"> </p>
 <p>实例代码：</p>
-<h1 id="var-allBadge"><a href="#var-allBadge" class="headerlink" title="var allBadge = [];"></a>var allBadge = [];</h1><pre><code>// alert(BadgeData.data.icon);
-for (var i = 0; i &lt; BadgeData.data.length - 3; i++) {
+<pre><code>// alert(BadgeData.data.icon);
+
   //取出对象
   var badge = BadgeData.data[i];
   var imageName = BadgeData.data[i].icon;
@@ -73,15 +73,11 @@ for (var i = 0; i &lt; BadgeData.data.length - 3; i++) {
   //*source={require(imgLocalUrl)} //这样写则不行*/
   //添加数据  本地加载图片是不能for的，
   var data={src:require(&apos;./img/flower0.png&apos;)};
-  allBadge.push(
-        {/*网络加载图片*/}
-        &lt;Image style={styles.imagesStyle}
-               source={{uri:imageName}}
-            /&gt;
-        {/*本地加载图片*/}
-        &lt;Image style={styles.imagesStyle} source={data.src} /&gt;
-  );
-}
+
+  网络加载图片
+   &lt;Image style={styles.imagesStyle} source={{uri:imageName}} /&gt;
+  本地加载图片
+   &lt;Image style={styles.imagesStyle} source={data.src} /&gt;
 </code></pre>
       
     </div>
@@ -272,7 +268,7 @@ context:注册观察者时，context传过来的值
     <header>
       
   
-    <h1 class="title"><a href="/2017/02/28/final详解/">final详解</a></h1>
+    <h1 class="title"><a href="/2017/02/28/java中接口和抽象类/">接口的特点和抽象类</a></h1>
   
 
       
@@ -281,14 +277,14 @@ context:注册观察者时，context传过来的值
     </header>
     <div class="entry">
       
-        <p>1：final关键字主要用于修饰类、类成员、方法、以及方法的形参。<br>2：final修饰成员属性.<br>3：如何正确使用final.</p>
+        <p>1，java中接口的特点<br>2，抽象类</p>
       
     </div>
       
         
         <footer>
           <div class="alignleft">
-            <a href="/2017/02/28/final详解/#more" class="more-link">查看详情 ›</a>
+            <a href="/2017/02/28/java中接口和抽象类/#more" class="more-link">查看详情 ›</a>
           </div>
         
         
@@ -307,7 +303,7 @@ context:注册观察者时，context传过来的值
     <header>
       
   
-    <h1 class="title"><a href="/2017/02/28/java中接口和抽象类/">接口的特点和抽象类</a></h1>
+    <h1 class="title"><a href="/2017/02/28/final详解/">final详解</a></h1>
   
 
       
@@ -316,14 +312,14 @@ context:注册观察者时，context传过来的值
     </header>
     <div class="entry">
       
-        <p>1，java中接口的特点<br>2，抽象类</p>
+        <p>1：final关键字主要用于修饰类、类成员、方法、以及方法的形参。<br>2：final修饰成员属性.<br>3：如何正确使用final.</p>
       
     </div>
       
         
         <footer>
           <div class="alignleft">
-            <a href="/2017/02/28/java中接口和抽象类/#more" class="more-link">查看详情 ›</a>
+            <a href="/2017/02/28/final详解/#more" class="more-link">查看详情 ›</a>
           </div>
         
         
