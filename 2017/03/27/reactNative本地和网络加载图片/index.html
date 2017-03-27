@@ -62,7 +62,26 @@
     <div class="entry">
       
         <p><img src="/2017/03/27/reactNative本地和网络加载图片/react_eg.png" alt="示例图片"> </p>
-
+<p>实例代码：</p>
+<h1 id="var-allBadge"><a href="#var-allBadge" class="headerlink" title="var allBadge = [];"></a>var allBadge = [];</h1><pre><code>// alert(BadgeData.data.icon);
+for (var i = 0; i &lt; BadgeData.data.length - 3; i++) {
+  //取出对象
+  var badge = BadgeData.data[i];
+  var imageName = BadgeData.data[i].icon;
+  //var imgLocalUrl = &apos;./img/flower0.png&apos;;
+  //*source={require(imgLocalUrl)} //这样写则不行*/
+  //添加数据  本地加载图片是不能for的，
+  var data={src:require(&apos;./img/flower0.png&apos;)};
+  allBadge.push(
+        {/*网络加载图片*/}
+        &lt;Image style={styles.imagesStyle}
+               source={{uri:imageName}}
+            /&gt;
+        {/*本地加载图片*/}
+        &lt;Image style={styles.imagesStyle} source={data.src} /&gt;
+  );
+}
+</code></pre>
       
     </div>
       
