@@ -68,26 +68,33 @@
 <p>Bower针对前端进行了优化。如果多个包依赖于一个包 - 例如jQuery - Bower将只下载jQuery一次。这被称为平面依赖图，它有助于减少页面加载。</p>
 <p>安装Bower</p>
 <p>Bower是一个命令行工具。用npm安装。</p>
-<p>$ npm install -g bower<br>低音需要节点，npm和git。</p>
-<p>最新版本： 凉鞋版</p>
-<p>要解决不同平台上的安装问题，请阅读故障排除维护页面。</p>
+<pre><code>$ npm install -g bower
+</code></pre><p>要解决不同平台上的安装问题，请阅读故障排除维护页面。</p>
 <p>入门</p>
 <p>安装包</p>
 <p>安装软件包bower install。Bower安装软件包bower_components/。</p>
-<p>$ bower install package<br>软件包可以是GitHub的简写，Git端点，URL等等。阅读更多关于bower install。</p>
-<h1 id="installs-the-project-dependencies-listed-in-bower-json"><a href="#installs-the-project-dependencies-listed-in-bower-json" class="headerlink" title="installs the project dependencies listed in bower.json"></a>installs the project dependencies listed in bower.json</h1><p>$ bower install</p>
-<h1 id="registered-package"><a href="#registered-package" class="headerlink" title="registered package"></a>registered package</h1><p>$ bower install jquery</p>
-<h1 id="GitHub-shorthand"><a href="#GitHub-shorthand" class="headerlink" title="GitHub shorthand"></a>GitHub shorthand</h1><p>$ bower install desandro/masonry</p>
-<h1 id="Git-endpoint"><a href="#Git-endpoint" class="headerlink" title="Git endpoint"></a>Git endpoint</h1><p>$ bower install git://github.com/user/package.git</p>
-<h1 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h1><p>$ bower install <a href="http://example.com/script.js" target="_blank" rel="external">http://example.com/script.js</a><br>搜索包</p>
+<pre><code>$ bower install package
+</code></pre><p>软件包可以是GitHub的简写，Git端点，URL等等。阅读更多关于bower install。</p>
+<pre><code># installs the project dependencies listed in bower.json
+$ bower install
+# registered package
+$ bower install jquery
+# GitHub shorthand
+$ bower install desandro/masonry
+# Git endpoint
+$ bower install git://github.com/user/package.git
+# URL
+$ bower install http://example.com/script.js
+</code></pre><p>搜索包</p>
 <p>搜索Bower软件包，并找到您喜爱的项目的注册软件包名称。</p>
 <p>保存套餐</p>
-<p>bower.json为您的包创建一个文件bower init。</p>
-<p>然后保存新的依赖bower.json关系bower install PACKAGE –save</p>
-<p>使用包</p>
-<p>如何使用软件包取决于您。我们建议您与Grunt，RequireJS，Yeoman和许多其他工具一起使用Bower ，或者使用API构建自己的工作流程。您也可以直接使用已安装的软件包，如下所示jquery：</p>
-<p>script src=”bower_components/jquery/dist/jquery.min.js”  </p>
+<pre><code>bower.json为您的包创建一个文件bower init。
 
+然后保存新的依赖bower.json关系bower install PACKAGE --save
+</code></pre><p>使用包</p>
+<p>如何使用软件包取决于您。我们建议您与Grunt，RequireJS，Yeoman和许多其他工具一起使用Bower ，或者使用API构建自己的工作流程。您也可以直接使用已安装的软件包，如下所示jquery：</p>
+<pre><code>script src=&quot;bower_components/jquery/dist/jquery.min.js&quot;  
+</code></pre>
       
     </div>
       
