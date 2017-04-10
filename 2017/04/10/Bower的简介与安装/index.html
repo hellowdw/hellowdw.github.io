@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>接口的特点和抽象类 › 小武的技术栈</title>
+  <title>bower的使用与安装 › 小武的技术栈</title>
   <meta name="author" content="王德武">
   
   <meta name="description" content="技术栈">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="接口的特点和抽象类"/>
+  <meta property="og:title" content="bower的使用与安装"/>
   <meta property="og:site_name" content="小武的技术栈"/>
 
   
@@ -52,28 +52,41 @@
     <header>
       
   
-    <h1 class="title">接口的特点和抽象类</h1>
+    <h1 class="title">bower的使用与安装</h1>
   
 
       
-        <time datetime="2017-02-27T16:00:00.000Z">2017-02-28</time>
+        <time datetime="2017-04-09T16:00:00.000Z">2017-04-10</time>
       
     </header>
     <div class="entry">
       
-        <p>1，java中接口的特点<br>2，抽象类</p>
+        <p>Bower可以管理包含HTML，CSS，JavaScript，字体甚至图像文件的组件。Bower不会连接或缩小代码或执行任何其他操作 - 只需安装所需软件包及其依赖关系的正确版本。</p>
 <a id="more"></a>
-<h2 id="java中接口的特点"><a href="#java中接口的特点" class="headerlink" title="java中接口的特点"></a>java中接口的特点</h2><ol>
-<li>类实现接口可以通过implements实现，实现接口的时候必须把接口中的所有方法实现,一个类可以实现多个接口。</li>
-<li>接口中定义的所有的属性默认是public static final的，即静态常量既然是常量，那么定义的时候必须赋值。</li>
-<li>接口中定义的方法不能有方法体。接口中定义的方法默认添加public abstract</li>
-<li>有抽象函数的不一定是抽象类，也可以是接口类。</li>
-<li>由于接口中的方法默认都是抽象的，所以不能被实例化。</li>
-<li>对于接口而言，可以使用子类来实现接口中未被实现的功能函数。</li>
-<li>如果实现类中要访问接口中的成员，不能使用super关键字。因为两者之间没有显示的继承关系，况且接口中的成员成员属性是静态的。可以使用接口名直接访问。</li>
-<li>接口没有构造方法。</li>
-</ol>
-<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>1：当描述一个类的时候，如果不能确定功能函数如何定义，那么该类就可以定义为抽象类，功能函数应该描述为抽象函数。<br>2：抽象类的特点<br>            1：有抽象函数的类，该类一定是抽象类。<br>            2：抽象类中不一定要有抽象函数。<br>            3：抽象类不能使用new创建对象<br>                1：创建对象，使用对象的功能，抽象类的方法，没有方法体。<br>            4：抽象类主要为了提高代码的复用性，让子类继承来使用。<br>            5：编译器强制子类实现抽象类父类的未实现的方法。<br>                1：可以不实现，前提是子类的也要声明为抽象的。<br>3：抽象的优点<br>            1：提高代码复用性<br>            2：强制子类实现父类中没有实现的功能<br>            java中接口的特点</p>
+<p>Bower可以管理包含HTML，CSS，JavaScript，字体甚至图像文件的组件。Bower不会连接或缩小代码或执行任何其他操作 - 只需安装所需软件包及其依赖关系的正确版本。</p>
+<p>要开始使用，Bower通过从各处获取和安装软件包，照顾狩猎，查找，下载和保存您要查找的内容。Bower在清单文件中跟踪这些包bower.json。如何使用软件包取决于您。Bower提供钩子，以便于在工具和工作流程中使用包。</p>
+<p>Bower针对前端进行了优化。如果多个包依赖于一个包 - 例如jQuery - Bower将只下载jQuery一次。这被称为平面依赖图，它有助于减少页面加载。</p>
+<p>安装Bower</p>
+<p>Bower是一个命令行工具。用npm安装。</p>
+<p>$ npm install -g bower<br>低音需要节点，npm和git。</p>
+<p>最新版本： 凉鞋版</p>
+<p>要解决不同平台上的安装问题，请阅读故障排除维护页面。</p>
+<p>入门</p>
+<p>安装包</p>
+<p>安装软件包bower install。Bower安装软件包bower_components/。</p>
+<p>$ bower install package<br>软件包可以是GitHub的简写，Git端点，URL等等。阅读更多关于bower install。</p>
+<h1 id="installs-the-project-dependencies-listed-in-bower-json"><a href="#installs-the-project-dependencies-listed-in-bower-json" class="headerlink" title="installs the project dependencies listed in bower.json"></a>installs the project dependencies listed in bower.json</h1><p>$ bower install</p>
+<h1 id="registered-package"><a href="#registered-package" class="headerlink" title="registered package"></a>registered package</h1><p>$ bower install jquery</p>
+<h1 id="GitHub-shorthand"><a href="#GitHub-shorthand" class="headerlink" title="GitHub shorthand"></a>GitHub shorthand</h1><p>$ bower install desandro/masonry</p>
+<h1 id="Git-endpoint"><a href="#Git-endpoint" class="headerlink" title="Git endpoint"></a>Git endpoint</h1><p>$ bower install git://github.com/user/package.git</p>
+<h1 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h1><p>$ bower install <a href="http://example.com/script.js" target="_blank" rel="external">http://example.com/script.js</a><br>搜索包</p>
+<p>搜索Bower软件包，并找到您喜爱的项目的注册软件包名称。</p>
+<p>保存套餐</p>
+<p>bower.json为您的包创建一个文件bower init。</p>
+<p>然后保存新的依赖bower.json关系bower install PACKAGE –save</p>
+<p>使用包</p>
+<p>如何使用软件包取决于您。我们建议您与Grunt，RequireJS，Yeoman和许多其他工具一起使用Bower ，或者使用API构建自己的工作流程。您也可以直接使用已安装的软件包，如下所示jquery：</p>
+<p>script src=”bower_components/jquery/dist/jquery.min.js”  </p>
 
       
     </div>
@@ -82,13 +95,13 @@
         
   
   <div class="categories">
-    <a href="/categories/java/">java</a>
+    <a href="/categories/bower/">bower</a>
   </div>
 
         
   
   <div class="tags">
-    <a href="/tags/implements/">implements</a>
+    <a href="/tags/bower/">bower</a>
   </div>
 
         
