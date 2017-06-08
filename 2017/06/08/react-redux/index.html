@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>第 2 页 › 归档 › 小武的技术栈</title>
+  <title>react-redux › 小武的技术栈</title>
   <meta name="author" content="王德武">
   
   <meta name="description" content="技术栈">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="react-redux"/>
   <meta property="og:site_name" content="小武的技术栈"/>
 
   
@@ -47,73 +47,78 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title">归档</h2>
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="[layout]">
+  <div class="post-content">
+    <header>
+      
+  
+    <h1 class="title">react-redux</h1>
+  
 
+      
+        <time datetime="2017-06-07T16:00:00.000Z">2017-06-08</time>
+      
+    </header>
+    <div class="entry">
+      
+        <p><img src="/2017/06/08/react-redux/react_eg2.png" alt="示例图片"> </p>
+<p>Action</p>
+<pre><code>Action 本质上是 JavaScript 普通对象，它是 store 数据的唯一来源。我们约定，action 内使用一个字符串类型的 type 字段来表示将要执行的动作。
+</code></pre><p>Reducer</p>
+<pre><code>Reducer是个形式为 (state, action) =&gt; state 的纯函数，描述了 action 如何把 state 转变成下一个 state 。
+</code></pre><p>Store</p>
+<pre><code>Store 是个全局对象，将 action 以及 reducer 联系在一起。负责更新、查询、订阅state等多个工作。Store 有以下职能：
 
-  <div class="archive">
-    
-      <article class="[layout]">
-        <div class="post-content">
-          <header>
-            
-              <h2 class="archive-post"><span datetime="2017-02-27T16:00:00.000Z">2017-02-28</span><a href="/2017/02/28/java中接口和抽象类/">接口的特点和抽象类</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="[layout]">
-        <div class="post-content">
-          <header>
-            
-              <h2 class="archive-post"><span datetime="2017-02-27T16:00:00.000Z">2017-02-28</span><a href="/2017/02/28/final详解/">final详解</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="[layout]">
-        <div class="post-content">
-          <header>
-            
-              <h2 class="archive-post"><span datetime="2017-02-22T13:51:36.000Z">2017-02-22</span><a href="/2017/02/22/static详解/">static详解</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="[layout]">
-        <div class="post-content">
-          <header>
-            
-              <h2 class="archive-post"><span datetime="2017-01-17T06:46:42.000Z">2017-01-17</span><a href="/2017/01/17/ipa文件“减肥”初探/">ipa文件“减肥”初探</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="[layout]">
-        <div class="post-content">
-          <header>
-            
-              <h2 class="archive-post"><span datetime="2017-01-17T06:42:51.000Z">2017-01-17</span><a href="/2017/01/17/iOS-按钮文字图片任意布局，随意定制/">iOS_按钮文字图片任意布局，随意定制</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="[layout]">
-        <div class="post-content">
-          <header>
-            
-              <h2 class="archive-post"><span datetime="2017-01-17T06:23:51.000Z">2017-01-17</span><a href="/2017/01/17/myblog/">微信小程序我厨首页实例</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
+维持应用的 state 。
+提供 getState() 方法获取 state 。
+提供 dispatch(action) 方法更新 state 。
+ 通过 subscribe() 注册监听器。
+</code></pre>
+      
+    </div>
+      
+      <footer>
+        
+  
+  <div class="categories">
+    <a href="/categories/react/">react</a>
   </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/redux/">redux</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+      </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  
+</section>
+
 
 </div></div>
     <aside id="sidebar" class="alignright">
