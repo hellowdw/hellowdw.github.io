@@ -53,6 +53,50 @@
     <header>
       
   
+    <h1 class="title"><a href="/2017/03/09/xcode编译错误/">xcode编译错误</a></h1>
+  
+
+      
+        <time datetime="2017-03-08T16:00:00.000Z">2017-03-09</time>
+      
+    </header>
+    <div class="entry">
+      
+        <p>一般使用xcode开发iOS时遇到 architecture x86_64 类似问题可能产生的原因</p>
+<pre><code>1.新建类，未参加 Target 编译 
+
+2.检查 targets --&gt; build phases --&gt; Compile Sources 中是否缺少 .m 文件
+
+3.检查 targets --&gt; build phases --&gt; link binary with libraries 是否缺少依赖库
+
+4.有些三方库可能需要导入libz.dylib
+
+5.检查库文件导入的路径不对或不存在，targets --&gt; building setting --&gt; search paths路径
+
+6.检查三方库是否重复导入
+
+6.-fno-objc-arc 的问题，检查下文件编译环境
+</code></pre>
+      
+    </div>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+      </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="[layout]">
+  <div class="post-content">
+    <header>
+      
+  
     <h1 class="title"><a href="/2017/03/07/Thread线程的概述/">线程的概述</a></h1>
   
 
@@ -88,7 +132,7 @@
     <header>
       
   
-    <h1 class="title"><a href="/2017/02/28/final详解/">final详解</a></h1>
+    <h1 class="title"><a href="/2017/02/28/java中接口和抽象类/">接口的特点和抽象类</a></h1>
   
 
       
@@ -97,14 +141,14 @@
     </header>
     <div class="entry">
       
-        <p>1：final关键字主要用于修饰类、类成员、方法、以及方法的形参。<br>2：final修饰成员属性.<br>3：如何正确使用final.</p>
+        <p>1，java中接口的特点<br>2，抽象类</p>
       
     </div>
       
         
         <footer>
           <div class="alignleft">
-            <a href="/2017/02/28/final详解/#more" class="more-link">查看详情 ›</a>
+            <a href="/2017/02/28/java中接口和抽象类/#more" class="more-link">查看详情 ›</a>
           </div>
         
         
@@ -123,7 +167,7 @@
     <header>
       
   
-    <h1 class="title"><a href="/2017/02/28/java中接口和抽象类/">接口的特点和抽象类</a></h1>
+    <h1 class="title"><a href="/2017/02/28/final详解/">final详解</a></h1>
   
 
       
@@ -132,14 +176,14 @@
     </header>
     <div class="entry">
       
-        <p>1，java中接口的特点<br>2，抽象类</p>
+        <p>1：final关键字主要用于修饰类、类成员、方法、以及方法的形参。<br>2：final修饰成员属性.<br>3：如何正确使用final.</p>
       
     </div>
       
         
         <footer>
           <div class="alignleft">
-            <a href="/2017/02/28/java中接口和抽象类/#more" class="more-link">查看详情 ›</a>
+            <a href="/2017/02/28/final详解/#more" class="more-link">查看详情 ›</a>
           </div>
         
         
@@ -307,6 +351,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2017/09/04/codeAliyun配置ssh-key/">codeAliyun配置ssh-key</a>
+      </li>
+    
+      <li>
         <a href="/2017/07/12/集成微博-微信-qq具体步奏-和一些坑点/">集成微博,微信,qq具体步奏,和一些坑点</a>
       </li>
     
@@ -320,10 +368,6 @@
     
       <li>
         <a href="/2017/05/02/require和import/">require和import</a>
-      </li>
-    
-      <li>
-        <a href="/2017/04/10/Bower的简介与安装/">bower的使用与安装</a>
       </li>
     
   </ul>
@@ -343,6 +387,8 @@
   
     <li><a href="/categories/react-native/">react-native</a><small>2</small></li>
   
+    <li><a href="/categories/ssh-key/">ssh-key</a><small>1</small></li>
+  
     <li><a href="/categories/微信小程序/">微信小程序</a><small>1</small></li>
   
   </ul>
@@ -353,7 +399,7 @@
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/List-Set-泛型/" style="font-size: 10px;">List Set  泛型</a> <a href="/tags/bower/" style="font-size: 10px;">bower</a> <a href="/tags/button/" style="font-size: 10px;">button</a> <a href="/tags/error/" style="font-size: 10px;">error</a> <a href="/tags/es5和es6创建类/" style="font-size: 10px;">es5和es6创建类</a> <a href="/tags/final/" style="font-size: 10px;">final</a> <a href="/tags/implements/" style="font-size: 10px;">implements</a> <a href="/tags/ipa/" style="font-size: 10px;">ipa</a> <a href="/tags/kvo/" style="font-size: 10px;">kvo</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-listView/" style="font-size: 10px;">react_listView</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/reqire-module-exports/" style="font-size: 10px;">reqire module.exports</a> <a href="/tags/static/" style="font-size: 10px;">static</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a>
+    <a href="/tags/List-Set-泛型/" style="font-size: 10px;">List Set  泛型</a> <a href="/tags/bower/" style="font-size: 10px;">bower</a> <a href="/tags/button/" style="font-size: 10px;">button</a> <a href="/tags/codeAliyun/" style="font-size: 10px;">codeAliyun</a> <a href="/tags/error/" style="font-size: 10px;">error</a> <a href="/tags/es5和es6创建类/" style="font-size: 10px;">es5和es6创建类</a> <a href="/tags/final/" style="font-size: 10px;">final</a> <a href="/tags/implements/" style="font-size: 10px;">implements</a> <a href="/tags/ipa/" style="font-size: 10px;">ipa</a> <a href="/tags/kvo/" style="font-size: 10px;">kvo</a> <a href="/tags/react/" style="font-size: 10px;">react</a> <a href="/tags/react-listView/" style="font-size: 10px;">react_listView</a> <a href="/tags/redux/" style="font-size: 10px;">redux</a> <a href="/tags/reqire-module-exports/" style="font-size: 10px;">reqire module.exports</a> <a href="/tags/static/" style="font-size: 10px;">static</a> <a href="/tags/thread/" style="font-size: 10px;">thread</a> <a href="/tags/分享/" style="font-size: 10px;">分享</a> <a href="/tags/小程序/" style="font-size: 10px;">小程序</a>
   </div>
 </div>
 
